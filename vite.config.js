@@ -31,6 +31,6 @@ export default defineConfig({
     generateManifestPlugin() // プラグインを追加
   ],
   build: {
-    outDir: 'build', // 出力ディレクトリ
+    outDir: 'dist', // 出力ディレクトリ
   }
 });
