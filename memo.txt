@@ -1,0 +1,102 @@
+11/20
+react-router-domを導入にあたって苦労したこと
+function App() {
+  return (
+    <div>
+       <Header />　　　
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </BrowserRouter>
+      <h1></h1>　　
+      <Footer />
+    </div>
+  );
+}
+
+入れる階層がだめだったのか読み込まない事象が多発した　npm run dev　ではローカルホストにすらつながらず、tailwindcssも読み込まないといった状況だった
+
+＊結局 npm run build で解消することには成功した、今後は　npm run build　で試してみようかと思っている
+
+
+
+
+
+＊必須インストール＊
+〇React Router
+SPA (シングルページアプリケーション) のルーティングを管理。
+npm install react-router-dom
+
+〇Axios
+REST API経由でWordPressからデータを取得するのに便利。
+Fetch APIでも代替可能ですが、Axiosの方が機能が充実
+
+〇Tailwind CSS
+デザイン効率を向上させるためのCSSフレームワーク。
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+
+〇React Helmet
+メタ情報やSEOタグの管理。
+npm install react-helmet
+
+〇環境変数管理 (dotenv)
+APIエンドポイントや認証キーを安全に管理するため。
+.envファイルを使い、API URLなどを隠します
+npm install dotenv
+
+
+＊あった方が効率よくなるもの＊
+状態管理ツール
+アプリケーションが複雑になる場合に、ReduxやZustandが役立つ。
+npm install redux react-redux
+npm install zustand
+
+
+〇React Icons
+手軽にアイコンを導入。
+npm install react-icons
+
+
+
+〇画像最適化
+画像のレスポンシブ対応や最適化に役立つ。
+npm install react-lazy-load-image-component
+
+〇Framer Motion
+アニメーション効果の追加。
+npm install framer-motion
+
+〇GraphQLとApollo Client
+WordPressのGraphQL APIを使用する場合に役立つ。
+npm install @apollo/client graphql
+
+＊使うかもしれないもの＊
+Next.js
+サーバーサイドレンダリングや静的サイト生成が必要な場合、Reactの代替フレームワークとして検討。
+npx create-next-app@latest
+
+React Hook Form
+フォーム作成とバリデーションを効率化。
+npm install react-hook-form
+
+Firebase
+ログインやユーザ管理が必要なら。
+npm install firebase
+
+JWT (JsonWebToken)
+トークンベース認証に必要。
+npm install jsonwebtoken
+
+パフォーマンス向上系
+Lodash
+データ操作用のユーティリティ関数ライブラリ。
+npm install lodash
+
+@wordpress/api や wp-api-client　lodash や immer　react-query や SWR
+React Query
+データフェッチやキャッシュ管理を簡単にする。
+npm install @tanstack/react-query
